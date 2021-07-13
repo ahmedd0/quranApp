@@ -1,0 +1,23 @@
+<h2>{{data?.name}}</h2>
+<p>{{data?.id}}</p>
+<p>{{data?.count}}</p>
+<p>{{data?.rewaya}}</p>
+<!-- <audio class="w-100" src="{{audio}}" controls autoplay> -->
+
+<!-- </audio> -->
+<ngx-spinner bdColor="rgb(61 91 136 / 92%)" size="medium" color="#fff" type="ball-clip-rotate-multiple"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+<ul class="row list-unstyled">
+  <li class="col-md-4 list" *ngFor="let sura of data?.surasData;let i = index">
+    <div class="item bg-dark mb-2 text-white p-3 d-flex justify-content-between align-items-center">
+      <h6>{{sura?.name}}</h6>
+      <i #icon *ngIf="!isPlay" class="fas fa-play" (click)=" toggle(i)"></i>
+
+
+    </div>
+  </li>
+
+
+</ul>
