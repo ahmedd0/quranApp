@@ -5,8 +5,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class QuranService {
-  audioSrc:BehaviorSubject<any> = new BehaviorSubject("https://server6.mp3quran.net/qtm/001.mp3");
-  audioPlayer:BehaviorSubject<any> = new BehaviorSubject(null);
+  audioSrc:any = "https://server6.mp3quran.net/qtm/001.mp3"
+  audioPlayer:any;
 
   constructor(private _HttpClient: HttpClient) {}
   configUrl: any =

@@ -7,14 +7,9 @@ import { QuranService } from './quran.service';
 })
 export class AppComponent {
   title = 'quranApp';
-  audioSrc: any;
   @ViewChild('player') player: any;
-  constructor(private _QuranService: QuranService) {
-    this._QuranService.audioSrc.subscribe((e) => {
-      this.audioSrc = e;
-    });
-  }
+  constructor(public _QuranService: QuranService) {}
   ngAfterViewInit(): void {
-    this._QuranService.audioPlayer.next(this.player);
+    this._QuranService.audioPlayer = this.player;
   }
 }
