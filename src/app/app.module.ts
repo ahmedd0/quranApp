@@ -12,6 +12,8 @@ import { ElsourComponent } from './elsour/elsour.component';
 import { SouraComponent } from './soura/soura.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { A7adethItemComponent } from './a7adeth-item/a7adeth-item.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FavouritesComponent,
     ElsourComponent,
     SouraComponent,
+    A7adethItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

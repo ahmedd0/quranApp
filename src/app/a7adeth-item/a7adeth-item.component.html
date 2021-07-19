@@ -1,0 +1,23 @@
+<h3>{{items?.data?.name}}</h3>
+<ul class="list-unstyled">
+  <li class="position-relative" *ngFor="let hadeth of items?.data?.hadiths">
+    <div class="item  p-2 mb-2">
+      <p class="mt-4">{{hadeth?.arab}}</p>
+      <div class="index position-absolute text-white  d-flex justify-content-center align-items-center">
+        <span class="p-1">{{hadeth?.number}}</span>
+      </div>
+
+    </div>
+  </li>
+</ul>
+<nav>
+  <ul class="pagination pagination-sm">
+    <li #item *ngFor="let num of arr?.slice(startPagination ,endPagination)" class="page-item " aria-current="page">
+      <span (click)="changePage(num,item)" class="page-link  border-0 ml-2">{{num+1}}</span>
+    </li>
+  </ul>
+</nav>
+<ngx-spinner bdColor="rgb(61 91 136 / 92%)" size="medium" color="#fff" type="ball-clip-rotate-multiple"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>

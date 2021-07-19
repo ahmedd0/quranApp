@@ -1,1 +1,5 @@
-<p>a7ades works!</p>
+<ul class="list-unstyled row">
+  <li class="col-md-4 mb-2" *ngFor="let item of items">
+    <a [routerLink]="['/a7adeth',item?.id]" class="d-block bg-dark p-2 text-white">{{item.name}}</a>
+  </li>
+</ul>

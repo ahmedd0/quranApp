@@ -1,0 +1,23 @@
+@import "./../../assets/scss/var.scss";
+
+.item {
+  background-color: $secondColor;
+
+  p {
+    line-height: 2;
+  }
+
+  .index {
+    right: 0;
+    top: 0;
+    background-color: $mainColor;
+    min-width: 40px;
+  }
+
+
+}
+
+.page-link {
+  cursor: pointer;
+  background-color: #eee;
+}

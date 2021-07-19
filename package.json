@@ -21,6 +21,7 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "bootstrap-v4-rtl": "^4.6.0-2",
     "jquery": "^3.6.0",
+    "ngx-pagination": "^5.1.1",
     "ngx-spinner": "^12.0.0",
     "popper.js": "^1.14.3",
     "rxjs": "~6.6.0",
