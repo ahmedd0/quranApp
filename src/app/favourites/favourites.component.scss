@@ -1,0 +1,15 @@
+@import "./../../assets/scss/var.scss";
+
+.item {
+  background: $secondColor;
+  border-radius: 2px;
+
+  h6 {
+    font-weight: 700;
+    // color: rgb(33 28 28 / 42%)
+  }
+
+  i {
+    cursor: pointer;
+  }
+}

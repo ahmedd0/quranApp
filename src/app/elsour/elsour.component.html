@@ -11,9 +11,10 @@
 </ngx-spinner>
 <ul class="row list-unstyled">
   <li class="col-md-4 list" *ngFor="let sura of data?.surasData;let i = index">
-    <div class="item bg-dark mb-2 text-white p-3 d-flex justify-content-between align-items-center">
+    <div class="item bg-dark mb-2 text-white p-3 d-flex justify-content-between align-items-center"
+      (click)=" toggle(i)">
       <h6>{{sura?.name}}</h6>
-      <i #icon *ngIf="!isPlay" class="fas fa-play" (click)=" toggle(i)"></i>
+      <i #icon *ngIf="!isPlay" class="player-icon fas fa-play"></i>
 
 
     </div>

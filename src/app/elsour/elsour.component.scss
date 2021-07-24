@@ -1,0 +1,16 @@
+@import "./../../assets/scss/var.scss";
+
+.item {
+  cursor: pointer;
+
+  .player-icon {
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+
+  }
+
+  &:hover .player-icon {
+    color: $secondColor;
+  }
+}

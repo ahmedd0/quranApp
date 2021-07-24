@@ -57,9 +57,11 @@ export class ElsourComponent implements OnInit {
     this.icon._results[i].nativeElement.classList.remove('fa-play');
     this.icon._results[i].nativeElement.classList.add('fa-pause');
     this.audio = this.data.surasData[i].url;
-    this._QuranService.audioSrc= (this.audio);
-    this._QuranService.audioPlayer.nativeElement.setAttribute("autoplay","true");
+    this._QuranService.audioSrc = this.audio;
+    this._QuranService.audioPlayer.nativeElement.setAttribute(
+      'autoplay',
+      'true'
+    );
     this._QuranService.audioPlayer.nativeElement.play();
-
   }
 }

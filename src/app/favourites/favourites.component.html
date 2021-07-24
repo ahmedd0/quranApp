@@ -1,1 +1,25 @@
-<p>favourites works!</p>
+<div class="fav p-3">
+
+  <div class="row">
+
+
+    <div class="col-md-4" *ngFor="let reciter of favReciter;let i = index">
+      <div class="item d-block  p-2 mb-3 ">
+        <div class="d-flex justify-content-between align-items-center">
+          <a class="text-dark text-decoration-none w-100" [routerLink]="['/home',reciter.id]">{{reciter.name}}</a>
+          <i (click)="removeFromFav(i,reciter)"
+            [ngClass]="{'favIcon':!reciter.isFav,'far':!reciter.isFav,'fa-heart':true,'text-white':!reciter.isFav,'fas':reciter.isFav,'text-danger':reciter.isFav}"></i>
+
+        </div>
+
+      </div>
+    </div>
+    <h2 *ngIf="favReciter.length == 0">قائمة المفضلة فارغة</h2>
+
+  </div>
+
+</div>
+<ngx-spinner bdColor="rgb(61 91 136 / 92%)" size="medium" color="#fff" type="ball-clip-rotate-multiple"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
