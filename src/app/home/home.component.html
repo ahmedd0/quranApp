@@ -3,13 +3,13 @@
   <div class="row">
 
 
-    <div class="col-md-4" *ngFor="let qarae of quraa;let i = index">
+    <div class="col-md-4" *ngFor="let qarae of _FavoriteReciterService.quraa;let i = index">
       <div class="item d-block  p-2 mb-3 ">
         <div class="d-flex justify-content-between align-items-center">
           <a class="text-dark text-decoration-none w-100" [routerLink]="['/home',qarae.id]">{{qarae.name}}</a>
           <i #favIcons
             [ngClass]="{'favIcon':!qarae.isFav,'far':!qarae.isFav,'fa-heart':true,'text-white':!qarae.isFav,'fas':qarae.isFav,'text-danger':qarae.isFav}"
-            (click)="addToFav(qarae,i)"></i>
+            (click)="_FavoriteReciterService.addToFav(qarae,i)"></i>
 
         </div>
 
