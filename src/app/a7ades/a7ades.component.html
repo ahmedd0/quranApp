@@ -3,3 +3,7 @@
     <a [routerLink]="['/a7adeth',item?.id]" class="d-block bg-dark p-2 text-white">{{item.name}}</a>
   </li>
 </ul>
+<ngx-spinner bdColor="rgb(61 91 136 / 92%)" size="medium" color="#fff" type="ball-clip-rotate-multiple"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>

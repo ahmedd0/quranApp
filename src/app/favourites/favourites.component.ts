@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoriteReciterService } from './../favorite-reciter.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-favourites',
@@ -7,7 +8,16 @@ import { FavoriteReciterService } from './../favorite-reciter.service';
   styleUrls: ['./favourites.component.scss'],
 })
 export class FavouritesComponent implements OnInit {
-  constructor(public _FavoriteReciterService: FavoriteReciterService) {}
+  constructor(
+    public _FavoriteReciterService: FavoriteReciterService,
+    public _NgxSpinnerService: NgxSpinnerService
+  ) {
+    this._NgxSpinnerService.show();
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      this._NgxSpinnerService.hide();
+    }, 600);
+  }
 }
