@@ -9,6 +9,7 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { QuranService } from './../quran.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-elsour',
@@ -32,13 +33,23 @@ export class ElsourComponent implements OnInit {
   ngOnInit(): void {
     let id = this._ActivatedRoute.snapshot.params.id;
     this.id = id;
-    this._QuranService.getAllSour(id).subscribe((res) => {
-      this.data = res;
-      this.audio = this.data.surasData[0].url;
-      setTimeout(() => {
-        this.spinner.hide();
-      }, 800);
-    });
+    this._QuranService.getAllSour(id).subscribe(
+      (res) => {
+        this.data = res;
+        this.audio = this.data.surasData[0].url;
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 800);
+      },
+      () => {
+        Swal.fire({
+          title: 'Error!',
+          text: 'SERVER ERROR',
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
+      }
+    );
     window.scrollTo(0, 0);
   }
 
