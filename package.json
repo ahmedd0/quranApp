@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng serve",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -20,11 +20,13 @@
     "@angular/router": "~12.0.5",
     "@fortawesome/fontawesome-free": "^5.15.3",
     "bootstrap-v4-rtl": "^4.6.0-2",
+    "cross-env": "^7.0.3",
     "jquery": "^3.6.0",
     "ngx-pagination": "^5.1.1",
     "ngx-spinner": "^12.0.0",
     "popper.js": "^1.14.3",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^11.10.8",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

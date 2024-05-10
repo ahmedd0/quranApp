@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { A7adethService } from '../a7adeth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-a7ades',
@@ -16,13 +17,24 @@ export class A7adesComponent implements OnInit {
   }
   items: any;
   ngOnInit(): void {
-    this._A7adethService.getA7adeth().subscribe((res) => {
-      this.items = res.data;
-      setTimeout(() => {
-        this._NgxSpinnerService.hide();
-      }, 600);
+    this._A7adethService.getA7adeth().subscribe(
+      (res) => {
+        this.items = res.data;
+        setTimeout(() => {
+          this._NgxSpinnerService.hide();
+        }, 600);
 
-      console.log(this.items);
-    });
+        console.log(this.items);
+      },
+      () => {
+        this._NgxSpinnerService.hide();
+        Swal.fire({
+          title: 'Error!',
+          text: 'SERVER ERROR',
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
+      }
+    );
   }
 }
