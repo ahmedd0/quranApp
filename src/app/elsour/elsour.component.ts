@@ -42,6 +42,8 @@ export class ElsourComponent implements OnInit {
         }, 800);
       },
       () => {
+        this.spinner.hide();
+
         Swal.fire({
           title: 'Error!',
           text: 'SERVER ERROR',
